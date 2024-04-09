@@ -6,7 +6,7 @@ const numeros = [10, 5, 20, 15]; //Resultado 20
 ## Ejercicio 2: Calcula la suma de todos los elementos en un arreglo:
 Crear una función que reciba por parámetros un array de numeros y calcule la suma de todos los elementos en un arreglo
 Ejemplo:
-const numeros = [10, 5, 20, 15]; //Resultado 50
+const numeros = [10, 5, 20, 15]; //Resultado 20
 
 ## Ejercicio 3: AbbrevName
 Creá una función llamada abbrevName que reciba como parámetro un string (""). Este string tiene que incluir un espacio. La Función deberá convertir el string recibido en iniciales.

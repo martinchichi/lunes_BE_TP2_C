@@ -21,3 +21,13 @@ const data = {
 // console.log(`🚀 ~ age:`, age);
 // console.log(`🚀 ~ edad:`, edad);
 // console.log(`🚀 ~ userName:`, userName);
+// --------------------------------------------
+
+const numeroMaximo= require("./ejercicios/numeroMaximo")
+const sumaArray= require("./ejercicios/sumaArray")
+const abbrevName= require("./ejercicios/abbrevName")
+
+numeroMaximo([10, 5, 20, 15])
+sumaArray([53,3,4,5, "s"])
+abbrevName("kuka canela camilo")
+abbrevName("Sam Harris")
