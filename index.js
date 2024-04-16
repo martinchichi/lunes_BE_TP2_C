@@ -1,33 +1,59 @@
-// require
-// console.log(`🚀 ~ require:`, require)
+function uno(param) {
+  return param;
+}
 
-const {saludar,  nombreUsuarios} = require("./funciones/saludar");
-// console.log(`🚀 ~ nombreUsuarios:`, nombreUsuarios)
-// console.log(`🚀 ~ usersName:`, usersName)
-// console.log(`🚀 ~ saludar:`, saludar);
-// console.log(`🚀 ~ usersName:`, usersName)
-saludar()
+setTimeout(() => {
+  console.log("set time out 1");
+}, 3000);
 
-// destructuring
-const data = {
-  userName: "Juan",
-  userLastName: "Gonzalez",
-  edad: 30,
-};
-// const userName=data.userName;
-// const edad=data.edad;
+setTimeout(() => {
+  console.log("set time out 2");
+}, 2000);
 
-// const { edad, userName, age } = data;
-// console.log(`🚀 ~ age:`, age);
-// console.log(`🚀 ~ edad:`, edad);
-// console.log(`🚀 ~ userName:`, userName);
-// --------------------------------------------
+function dos(param) {
+  return new Promise((resolve, reject) => {
+    if (param === 2) {
+      resolve("promesa ok es dos");
+    } else {
+      reject("Pomesa rechazada");
+    }
+  });
+}
+function tres() {
+  return fetch("http://swapi.dev/api/planets/1/");
+}
+async function cuatro() {
+  try {
+    const data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    if (data.status === 404) throw "Error 404";
+    const dataJson = await data.json();
+    // console.log(`🚀 ~ cuatro ~ data:`, dataJson);
+    return dataJson;
+  } catch (error) {
+    console.log(`🚀 ~ cuatro ~ error:`, error);
+  } finally {
+    console.log("final del try catch");
+  }
+}
+function cinco(param) {
+  return param;
+}
 
-const numeroMaximo= require("./ejercicios/numeroMaximo")
-const sumaArray= require("./ejercicios/sumaArray")
-const abbrevName= require("./ejercicios/abbrevName")
+console.log(`🚀 ~ uno:`, uno("uno"));
+// console.log(`🚀 ~ dos:`, dos(2));
 
-numeroMaximo([10, 5, 20, 15])
-sumaArray([53,3,4,5, "s"])
-abbrevName("kuka canela camilo")
-abbrevName("Sam Harris")
+dos(2)
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((e) => console.log(e))
+  .finally(() => console.log(`final de la promesa`));
+
+// console.log(`🚀 ~ tres:`, tres("tres"));
+tres()
+  // .then((data) => data.json())
+  // .then((res) => console.log(tres, res))
+  // .catch((e) => console.log(e));
+// console.log(`🚀 ~ cuatro:`, cuatro("cuatro"));
+cuatro().then(data=>console.log(data))
+console.log(`🚀 ~ cinco:`, cinco("cinco"));
