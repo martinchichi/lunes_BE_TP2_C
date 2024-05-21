@@ -1,4 +1,7 @@
 import dbConnection from "../dbConnection/dbConnection.js";
+import User from "../Models/User.js";
+
+
 
 class UserControllers {
   getAllUsers = async (req, res) => {
