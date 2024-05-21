@@ -15,9 +15,7 @@ userRoutes.post("/", (req, res) => {
   res.send("create user");
 });
 
-userRoutes.put("/:id", (req, res) => {
-  res.send("update user by id");
-});
+userRoutes.put("/:id", userController.updateUser);
 userRoutes.delete("/:id", (req, res, next) => {
   res.send("delete user by id");
   next();
