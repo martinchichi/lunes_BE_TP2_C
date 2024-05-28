@@ -1,9 +1,16 @@
 import { Sequelize } from "sequelize";
-
-const dbConnection = new Sequelize("lunes", "root", "", {
-  host: "localhost",
-  dialect: "mysql",
-  port: 3306,
+import {
+  DB_NAME,
+  DB_USER,
+  DB_PASSWORD,
+  DB_HOST,
+  DB_DIALECT,
+  DB_PORT,
+} from "../config/config.js";
+const dbConnection = new Sequelize(DB_NAME, DB_USER,DB_PASSWORD, {
+  host:  DB_HOST,
+  dialect: DB_DIALECT,
+  port:  DB_PORT,
 });
 
 try {
