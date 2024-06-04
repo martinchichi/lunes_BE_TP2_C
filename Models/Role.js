@@ -8,7 +8,7 @@ Role.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue:"user"
+      defaultValue: "user",
     },
   },
   {
@@ -16,5 +16,7 @@ Role.init(
     modelName: "Role",
   }
 );
+
+
 
 export default Role;
